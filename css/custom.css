@@ -1,0 +1,203 @@
+@font-face {
+	font-family: 'Awair Dots Score';
+	src: url('../fonts/Awair Dots Score.ttf') format('truetype');
+	src: url('../fonts/Awair Dots Score.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Awair Dots Stats';
+	src: url('../fonts/Awair Dots Stats.ttf') format('truetype');
+	src: url('../fonts/Awair Dots Stats.woff') format('woff');
+}
+
+html {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+}
+
+body {
+	background: black;
+	font-family: 'Awair Dots Score', 'Awair Dots Stats' !important;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+}
+
+.container {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	padding: 0vh !important;
+}
+
+.sides {
+	position: relative;
+	top: 50vh;
+	transform: translateY(-50%);
+	display: inline-block;
+	width: 50vw;
+	height: 25vh;
+	font-size: 25vh;
+	line-height: 25vh;
+	color: white;
+}
+
+#dot-side {
+	float: left;
+}
+
+/* Individual Dots' Containers */
+
+.dots {
+	display: inline-block;
+	float: right; /* keep for correct order of dots */
+	position: absolute;
+	width: 3vh;
+	bottom: 0vh;
+}
+
+/* Individual Dots */
+
+.dot {
+	display: block;
+	background-color: white;
+	width: 3vh;
+	height: 3vh;
+	border-radius: 50vh;
+	margin-top: 2.5vh;
+}
+
+#tempDots {
+	right: 53vh;
+}
+
+#humidDots {
+	right: 41vh;
+}
+
+#co2Dots {
+	right: 29vh;
+}
+
+#vocDots {
+	right: 17vh;
+}
+
+#dustDots {
+	right: 5vh;
+}
+
+/* Score Number */
+
+#score-side {
+	float: left;
+	text-align: left;
+}
+
+#status-number {
+	float: left;
+	display: block;
+	position: relative;
+	height: 25vh;
+	bottom: 0vh;
+	letter-spacing: 6vh;
+	padding-left: 10vh;
+}
+
+/* Color Status Dot */
+
+#status-dot {
+	float: left;
+	display: inline-block;
+	position: relative;
+	width: 3vh;
+	height: 25vh;
+	padding-left: 0vh;
+	bottom: 0vh;
+}
+
+.color-dot {
+	width: 3vh;
+	height: 3vh;
+	border-radius: 50vh;
+	position: relative;
+	top: 12.5vh;
+	transform: translateY(-50%);
+}
+
+#green-dot {
+	background-color: #00FF00;
+}
+
+#amber-dot {
+	background-color: #FFA500;
+}
+
+#red-dot {
+	background-color: #FF0000;
+}
+
+
+
+
+/* Admin Page */
+
+#admin-page {
+	font-family: Helvetica, Arial !important;
+	font-size: 2vh;
+}
+
+@media (max-height: 200px) {
+	#admin-page {
+		font-size: 1vh;
+	}
+}
+
+#admin-page form {
+	margin: 0 auto;
+	position: absolute;
+	padding: 20px;
+	border: 1vh solid white;
+	max-height: 90vh;
+	width: 50vw;
+	max-width: 500px;
+	min-width: 225px;
+	position: relative;
+	top: 50vh;
+	transform: translateY(-50%);
+}
+
+#admin-page label {
+	margin: 0vh;
+}
+
+#admin-page label {
+	color: white;
+}
+
+#admin-page form,
+#admin-page select,
+#admin-page input {
+	display: block;
+	
+}
+
+#admin-page select,
+#admin-page input:not([type="submit"]) {
+	position: relative;
+	margin-bottom: 2vh;
+	width: 100%;
+}
+
+#admin-page select,
+#admin-page input {
+	background: white;
+	border-radius: 10px;
+	padding: 5px 5px;
+}
+
+#admin-page input[type="submit"] {
+	padding: 5px 25px;
+	margin: 0 auto;
+}
