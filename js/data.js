@@ -55,6 +55,7 @@ function update_data() {
 			if (color != null) {
 				var colorDot = '<div class="color-dot" id="' + color + '-dot"></div>';
 			}  else {
+				var colorDot = '<div class="color-dot" id="blinking-dot"></div>';
 				console.log('no color?');
 			}
 			
@@ -73,6 +74,7 @@ function update_data() {
 			for (var i = 0; i < dustDot; i++) {
 				dustDots += '<div class="dot" id="dust"></div>';
 			}
+			
 			document.getElementById("dot-side").innerHTML = '<div class="dots" id="dustDots">' + dustDots + '</div><div class="dots" id="vocDots">' + vocDots + '</div><div class="dots" id="co2Dots">' + co2Dots + '</div><div class="dots" id="humidDots">' + humidDots + '</div><div class="dots" id="tempDots">' + tempDots + '</div>';
 			document.getElementById("status-number").innerText = data.score;
 			document.getElementById("status-dot").innerHTML = colorDot;
