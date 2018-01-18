@@ -33,7 +33,7 @@ if (submitted != undefined && submitted != null) {
 
 function update_data() {
 	$.ajax({
-		url: 'https://enterprise.awair.is/v1/orgs/self/devices/' + devType + '/' + devId + '/events/score/latest',
+		url: 'https://afb-api.awair.is/v1/orgs/self/devices/' + devType + '/' + devId + '/events/score/latest',
 		type: 'GET',
 		crossDomain: false,
 		dataType: 'json',
