@@ -7,14 +7,14 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<meta property="og:image" content="http://awair-static-assets.s3-website-us-west-2.amazonaws.com/img/og.jpg">
+		<meta property="og:image" content="https://awair-static-assets.s3-website-us-west-2.amazonaws.com/img/og.jpg">
 		<title>Awair Demo - Admin</title>
 		
-		<link rel="shortcut icon" type="image/x-icon" href="http://awair-static-assets.s3-website-us-west-2.amazonaws.com/img/icon.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="https://awair-static-assets.s3-website-us-west-2.amazonaws.com/img/icon.ico">
 		<link rel="icon" href="http://awair-static-assets.s3-website-us-west-2.amazonaws.com/img/icon.ico">
-		<link rel="apple-touch-icon-precomposed" href="http://awair-static-assets.s3-website-us-west-2.amazonaws.com/img/icon.png">
-		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://awair-static-assets.s3-website-us-west-2.amazonaws.com/img/icon.png">
-		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://awair-static-assets.s3-website-us-west-2.amazonaws.com/img/icon.png">
+		<link rel="apple-touch-icon-precomposed" href="https://awair-static-assets.s3-website-us-west-2.amazonaws.com/img/icon.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://awair-static-assets.s3-website-us-west-2.amazonaws.com/img/icon.png">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://awair-static-assets.s3-website-us-west-2.amazonaws.com/img/icon.png">
 		
 		
 		<!-- Bootstrap -->
@@ -40,21 +40,52 @@
 				<select name="devType" id="devType" required>
 					<option value="awair" selected="selected">Awair</option>
 					<option value="awair-glow">Awair Glow</option>
+					<option value="awair-omni">Awair Omni</option>
+					<option value="awair-mint">Awair Mint</option>
 				</select>
 				<label for="devId">Device ID:</label>
-				<input type="number" name="devId" id="devId" required>
+				<input type="number" list="deviceids" name="devId" id="devId" pattern="^[0-9]{5}" min="1" max="99999" step="1" required>
+				<datalist id="deviceids">
+					<option value="671">awair_671</option>
+					<option value="1061">awair_1061</option>
+					<option value="3957" selected>(recommended) awair_3957</option>
+					<option value="8873">awair_8873</option>
+					<option value="12029">awair_12029</option>
+					<option value="12038">awair_12038</option>
+					<option value="12039">awair_12039</option>
+					<option value="12040">awair_12040</option>
+					<option value="18222">awair_18222</option>
+					<option value="18571">awair_18571</option>
+					<option value="19503">awair_19503</option>
+					<option value="416">awair-glow_416</option>
+					<option value="676">awair-glow_676</option>
+					<option value="761">awair-glow_761</option>
+					<option value="3425">awair-glow_3425</option>
+					<option value="3829">awair-glow_3829</option>
+					<option value="3949">awair-glow_3949</option>
+					<option value="4088">awair-glow_4088</option>
+					<option value="4361">awair-glow_4361</option>
+					<option value="5348">awair-glow_5348</option>
+					<option value="3659">awair-mint_3659</option>
+					<option value="3667">awair-mint_3667</option>
+					<option value="3694">awair-mint_3694</option>
+					<option value="3752">awair-mint_3752</option>
+					<option value="4040">awair-mint_4040</option>
+					<option value="736">awair-omni_736</option>
+					<option value="1019">awair-omni_1019</option>
+				</datalist>
 				<label for="orgToken">Organization API Token:</label>
 				<input type="text" name="orgToken" id="orgToken" required>
-				<label for="refresh">Refresh Rate (seconds):</label>
-				<select name="refreshTime" id="refreshTime" required>
-					<option value="1">1</option>
-					<option value="10">10</option>
-					<option value="15" selected="selected">15</option>
-					<option value="30">30</option>
-					<option value="45">45</option>
-					<option value="60">60</option>
-					<option value="90">90</option>
-				</select>
+				<label for="refreshTime">Refresh Rate (seconds):</label>
+				<input type="number" list="refreshtimes" name="refreshTime" id="refreshTime" pattern="^[0-9]{3}" min="1" max="999" step="1" required>
+				<datalist id="refreshtimes">
+					<option value="10">10 seconds</option>
+					<option value="15" selected>(recommended) 15 seconds</option>
+					<option value="30">30 seconds</option>
+					<option value="45">45 seconds</option>
+					<option value="60">60 seconds</option>
+					<option value="90">90 seconds</option>
+				</datalist>
 				<input type="submit" name="submit-button" id="submit-button" value="Update">
 			</form>
 		</div>

@@ -45,16 +45,16 @@ body {
 
 #dot-side {
 	float: left;
+	text-align: right;
+	padding-right: 5vh;
 }
 
 /* Individual Dots' Containers */
 
 .dots {
 	display: inline-block;
-	float: right; /* keep for correct order of dots */
-	position: absolute;
-	width: 3vh;
-	bottom: 0vh;
+	width: 2.75vh;
+	margin-left: 8vh;
 }
 
 /* Individual Dots */
@@ -62,30 +62,30 @@ body {
 .dot {
 	display: block;
 	background-color: white;
-	width: 3vh;
-	height: 3vh;
+	width: 2.75vh;
+	height: 2.75vh;
 	border-radius: 50vh;
-	margin-top: 2.5vh;
+	margin-top: 2.75vh;
 }
 
 #tempDots {
-	right: 53vh;
+	/*right: 53vh;*/
 }
 
 #humidDots {
-	right: 41vh;
+	/*right: 41vh;*/
 }
 
 #co2Dots {
-	right: 29vh;
+	/*right: 29vh;*/
 }
 
 #vocDots {
-	right: 17vh;
+	/*right: 17vh;*/
 }
 
 #dustDots {
-	right: 5vh;
+	/*right: 5vh;*/
 }
 
 /* Score Number */
@@ -93,36 +93,32 @@ body {
 #score-side {
 	float: left;
 	text-align: left;
+	padding-left: 10vh;
 }
 
 #status-number {
-	float: left;
-	display: block;
-	position: relative;
+	display: inline-block;
 	height: 25vh;
 	bottom: 0vh;
 	letter-spacing: 6vh;
-	padding-left: 10vh;
 }
 
 /* Color Status Dot */
 
 #status-dot {
-	float: left;
 	display: inline-block;
-	position: relative;
-	width: 3vh;
+	width: 2.75vh;
 	height: 25vh;
-	padding-left: 0vh;
+	padding-left: 2.75vh;
 	bottom: 0vh;
 }
 
 .color-dot {
-	width: 3vh;
-	height: 3vh;
+	width: 2.75vh;
+	height: 2.75vh;
 	border-radius: 50vh;
 	position: relative;
-	top: 12.5vh;
+	top: 12.75vh;
 	transform: translateY(-50%);
 }
 
@@ -184,9 +180,6 @@ body {
 
 #admin-page label {
 	margin: 0vh;
-}
-
-#admin-page label {
 	color: white;
 }
 
@@ -194,7 +187,6 @@ body {
 #admin-page select,
 #admin-page input {
 	display: block;
-	
 }
 
 #admin-page select,
