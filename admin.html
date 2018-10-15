@@ -32,6 +32,7 @@
 					<option value="awair-glow">Awair Glow</option>
 					<option value="awair-omni">Awair Omni</option>
 					<option value="awair-mint">Awair Mint</option>
+					<option value="awair-r2">Awair 2nd Edition</option>
 				</select>
 				<label for="devId">Device ID:</label>
 				<input type="number" list="deviceids" name="devId" id="devId" pattern="^[0-9]{5}" min="1" max="99999" step="1" required>
@@ -64,13 +65,15 @@
 					<option value="736">awair-omni_736</option>
 					<option value="1019">awair-omni_1019</option>
 				</datalist>
-				<label for="orgToken">Organization API Token:</label>
-				<input type="text" name="orgToken" id="orgToken" required>
+				<label for="orgId">Organization ID:</label>
+				<input type="number" name="orgId" id="orgId" required>
+				<label for="devToken">Developer API Token:</label>
+				<input type="text" name="devToken" id="devToken" required>
 				<label for="refreshTime">Refresh Rate (seconds):</label>
 				<input type="number" list="refreshtimes" name="refreshTime" id="refreshTime" pattern="^[0-9]{3}" min="1" max="999" step="1" required>
 				<datalist id="refreshtimes">
 					<option value="10">10 seconds</option>
-					<option value="15" selected>(recommended) 15 seconds</option>
+					<option value="15" selected="selected">(recommended) 15 seconds</option>
 					<option value="30">30 seconds</option>
 					<option value="45">45 seconds</option>
 					<option value="60">60 seconds</option>

@@ -3,9 +3,10 @@ var humidDots;
 var co2Dots;
 var vocDots;
 var dustDots;
+var orgId;
 var devType;
 var devId;
-var orgToken;
+var devToken;
 var refreshTime;
 var submitted;
 
@@ -21,19 +22,20 @@ function getParameterByName(name, url) {
 
 setInterval(getParameterByName, 1000);
 
+orgId = getParameterByName('orgId');
 devType = getParameterByName('devType');
 devId = getParameterByName('devId');
-orgToken = getParameterByName('orgToken');
+devToken = getParameterByName('devToken');
 refreshTime = getParameterByName('refreshTime');
 submitted = getParameterByName('submit-button');
 
 if (submitted != undefined && submitted != null) {
-    window.location = 'index.html?devType=' + devType + '&devId=' + devId + '&orgToken=' + orgToken + '&refreshTime=' + refreshTime;
+    window.location = 'index.html?orgId=' + orgId + '&devType=' + devType + '&devId=' + devId + '&devToken=' + devToken + '&refreshTime=' + refreshTime;
 }
 
 function update_data() {
 	$.ajax({
-		url: 'https://developer-apis.awair.is/v1/users/self/devices/' + devType + '/' + devId + '/air-data/latest',
+		url: 'https://developer-apis.awair.is/v1/orgs/' + orgId + '/devices/' + devType + '/' + devId + '/air-data/latest',
 		type: 'GET',
 		dataType: 'json',
 		success: function(json) {
@@ -54,6 +56,7 @@ function update_data() {
 					case "temp":
 						// Temperature (C)
 						var tempDot = indices[index].value;
+						tempDot = Math.abs(tempDot);
 						for (var i = 0; i < tempDot; i++) {
 							tempDots += '<div class="dot" id="temp"></div>';
 						}
@@ -62,6 +65,7 @@ function update_data() {
 					case "humid":
 						// Humidity (%)
 						var humidDot = indices[index].value;
+						humidDot = Math.abs(humidDot);
 						for (var i = 0; i < humidDot; i++) {
 							humidDots += '<div class="dot" id="humid"></div>';
 						}
@@ -146,7 +150,7 @@ function update_data() {
 	});
 	
 	function setHeader(xhr) {
-		xhr.setRequestHeader('Authorization', 'Bearer ' + orgToken);
+		xhr.setRequestHeader('Authorization', 'Bearer ' + devToken);
 	}
 }
 
