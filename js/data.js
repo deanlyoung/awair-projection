@@ -23,6 +23,11 @@ function getParameterByName(name, url) {
 setInterval(getParameterByName, 1000);
 
 orgId = getParameterByName('orgId');
+if (orgId == 'users/self') {
+	orgId = 'users/self';
+} else {
+	orgId = 'orgs/' + orgId;
+}
 devType = getParameterByName('devType');
 devId = getParameterByName('devId');
 devToken = getParameterByName('devToken');
@@ -35,7 +40,7 @@ if (submitted != undefined && submitted != null) {
 
 function update_data() {
 	$.ajax({
-		url: 'https://developer-apis.awair.is/v1/orgs/' + orgId + '/devices/' + devType + '/' + devId + '/air-data/latest',
+		url: 'https://developer-apis.awair.is/v1/' + orgId + '/devices/' + devType + '/' + devId + '/air-data/latest',
 		type: 'GET',
 		dataType: 'json',
 		success: function(json) {
